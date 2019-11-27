@@ -10,22 +10,20 @@ info:
 
 lifecycle:
   startup:
-    command: ['npm', 'start']
+    command: ['npx', 'micro', '/app/index.js']
 
 health:
   http:
     path: /health
-    port: 8080
+    port: 3000
 
 actions:
   fetch:
-    help:
-      To get the data for a given URL simply add that URL (safely escaped to the
-      url query parameter.
+    help: To get the data for a given URL simply add that URL (safely escaped to the url query parameter.
     http:
       path: /
       method: get
-      port: 8080
+      port: 3000
     arguments:
       url:
         required: true
